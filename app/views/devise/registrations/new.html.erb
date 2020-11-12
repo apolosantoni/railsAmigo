@@ -1,0 +1,31 @@
+<br/>
+
+  <div class="card" style="width: 300px;">
+    
+    <div class="card-header">
+      <h4>Registrar - se</h4>
+    </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group">
+    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"e-mail" %>
+   
+    <% if @minimum_password_length %>
+    <br/>
+    <em style="font-size: 12px">(minimo de <%= @minimum_password_length %> caracteres)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "Nova senha", placeholder:"Senha" %>
+   
+    <%= f.password_field :password_confirmation, autocomplete: "Nova senha",placeholder:"confirmar senha" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registrar", class:"btn btn-info" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

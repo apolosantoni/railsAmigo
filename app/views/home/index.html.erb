@@ -1,0 +1,8 @@
+<div>
+	<h1>Olá <% if user_signed_in?%> <%= current_user.email %> <% end %> seu filho da puta </h1>
+	<p>Aqui é o motherfucker aprendendo a programar em Rails</p>
+	<% if user_signed_in? %>
+	<%= link_to "Listar amigos ","amigos", class:"btn btn-primary"%>
+	<% end %>
+	<%= link_to "Sobre ","home/about", class:"btn btn-primary"%>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+<h1> Sobre a pagina. </h1>
+<h4>Proposito da pagina. </h4>
+<p> Estudo sobre como desenvolver uma pagina com usuario e CRUD, utilizando ruby on rails </p>
+<br/>
+<% if user_signed_in? %>
+<div>
+	<p>Email do usuario logado : <%= current_user.email %> </p>
+</div>
+<% end %>
+<br/>
+
+<%= link_to "Home","/",class:"btn btn-primary" %>
+</div>

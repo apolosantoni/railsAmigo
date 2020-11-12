@@ -1,0 +1,38 @@
+
+
+<h1>Amigos de <%= current_user.email %></h1>
+
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Twitter</th>
+      <th scope="col">User_id</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @amigos.each do |amigo| %>
+    
+      <tr scope="row">
+        <td><%= amigo.nome %></td>
+        <td><%= amigo.sobrenome %></td>
+        <td><%= amigo.email %></td>
+        <td><%= amigo.telefone %></td>
+        <td><%= amigo.twitter %></td>
+        <td><%= amigo.user_id %></td>
+        <td><%= link_to 'Ver', amigo, class:"btn btn-info" %></td>
+        <td><%= link_to 'Editar', edit_amigo_path(amigo), class:"btn btn-warning" %></td>
+        <td><%= link_to 'Excluir', amigo, method: :delete, data: { confirm: 'Você tem certeza ?'}, class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Amigo', new_amigo_path, class:"btn btn-primary" %>
